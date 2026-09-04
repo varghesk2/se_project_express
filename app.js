@@ -16,7 +16,7 @@ const app = express();
 const { PORT = 3001, MONGO_URI } = process.env;
 
 mongoose
-  .connect(MONGO_URI)
+  .connect(MONGO_URI || "mongodb://localhost:27017/wtwr_db")
   .then(() => {
     console.log("Connected to MongoDB");
   })
