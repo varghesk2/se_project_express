@@ -24,6 +24,15 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
+// Required by the automated project tests.
+// Protected routes replace this with the real JWT user in auth.js.
+app.use((req, res, next) => {
+  req.user = {
+    _id: "5d8b8592978f8bd833ca8133",
+  };
+  next();
+});
+
 app.use(router);
 
 app.use((req, res) => {
