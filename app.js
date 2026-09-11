@@ -4,10 +4,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-const usersRouter = require("./routes/user");
-const itemsRouter = require("./routes/items");
-
-const { createUser, login } = require("./controllers/user");
+const router = require("./routes");
 
 const { NOT_FOUND } = require("./utils/errors");
 
@@ -27,21 +24,7 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
-app.post("/signup", createUser);
-
-app.post("/signin", login);
-
-// Test user ID required for automated tests
-app.use((req, res, next) => {
-  req.user = {
-    _id: "5d8b8592978f8bd833ca8133",
-  };
-  next();
-});
-
-app.use("/users", usersRouter);
-
-app.use("/items", itemsRouter);
+app.use(router);
 
 app.use((req, res) => {
   res.status(NOT_FOUND).send({
