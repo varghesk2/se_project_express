@@ -8,7 +8,7 @@ The idea of the application is pretty simple - we make a call to an API, which t
 
 - [Figma Design](https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR)
 
-- Pitch Video https://www.loom.com/share/4c05764f447f473c8280769ae91fc73f
+- Pitch Video https://www.loom.com/share/bd7a14b28ff64d9cb8fc00bc29f19e0f 
 
 
 WTWR Express Backend Project Description
